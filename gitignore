@@ -1,0 +1,9 @@
+*~
+*.swp
+*.o
+*.a
+*.so
+*.class
+*.log
+*.core
+
