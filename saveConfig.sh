@@ -14,4 +14,5 @@ cp ~/.config/i3/config ~/scripts/scripts/configuration/yourhome/.config/i3
 cd ~/scripts/scripts
 
 git add -A
-git commit -m "files auto saved"
+date=$(date -d 'now')
+git commit -m "files auto saved $date"
