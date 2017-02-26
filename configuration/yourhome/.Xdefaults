@@ -4,3 +4,4 @@ URxvt.reverseVideo:  True
 URxvt.transparent:   true
 URxvt.scrollBar:     false
 URxvt.shading:       30
+URxvt.font: xft:consolas:size=12
