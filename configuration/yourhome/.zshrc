@@ -1,4 +1,3 @@
-
 export LANG=en_US.utf8
 export SHELL=zsh
 export NNTPSERVER="news.epita.fr"
@@ -18,14 +17,13 @@ alias gitl='git log --graph --oneline --all --decorate'
 #'import -window root ~/afs/lock5.png | convert ~/afs/lock5.png -blur 5x3 ~/afs/lock5.png | i3lock -i ~/afs/lock5.png'
 alias cpl='gcc -o main -Wall -Wextra -Werror -std=c99 -pedantic -g'
 alias MakeM='./~/MakeM.sh"'
+alias s='source ~/.zshrc'
 alias logssh='eval $(ssh-agent); ssh-add'
 #PS1=$BLEU'[\u@\h \W]\$ '$WHITE
 
-setprompt () {
-# Check if we are on SSH or not
-# set the prompt
+
+
 autoload -U colors && colors
-autoload -U compinit && compinit
 
 
 function izitgit () {
@@ -46,11 +44,16 @@ function folder()
   print $ee
 }
 
-PROMPT="
-[%(?.$fg[green].$fg[red])% %?$reset_color]$fg[cyan]$(folder)$reset_color$fg[yellow]$(izitgit)$reset_color
+function setprompt()
+{
+PROMPT="[%(?.$fg[green].$fg[red])% "
+PROMPT+="%?$reset_color]$fg[cyan]$(folder)$reset_color"
+PROMPT+="$fg[yellow]$(izitgit)$reset_color
 > "
-RPROMPT="%T"
 }
+RPROMPT="%T"
+
+precmd() { eval setprompt }
 setprompt
 setopt prompt_subst
 autoload -U promptinit
