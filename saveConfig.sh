@@ -5,6 +5,7 @@ mkdir -p ~/scripts/scripts/configuration/yourhome/.config/i3
 cp ~/.vimrc ~/scripts/scripts/configuration/yourhome/
 cp ~/.bashrc ~/scripts/scripts/configuration/yourhome/
 cp ~/.Xdefaults ~/scripts/scripts/configuration/yourhome/
+cp ~/.zshrc ~/scripts/scripts/configuration/yourhome/
 cp ~/.xinitrc ~/scripts/scripts/configuration/yourhome/
 cp ~/.Xauthority ~/scripts/scripts/configuration/yourhome/
 cp ~/.i3status.conf ~/scripts/scripts/configuration/yourhome/

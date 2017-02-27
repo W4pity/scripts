@@ -2,6 +2,7 @@
 [[ $- != *i* ]] && return
 
 export LANG=en_US.utf8
+export SHELL=zsh 
 export NNTPSERVER="news.epita.fr"
 export EDITOR=vim
 LS_COLORS=$LS_COLORS:'di=1;36:' ; export LS_COLORS
