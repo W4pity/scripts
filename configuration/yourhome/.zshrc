@@ -20,21 +20,21 @@ alias MakeM='./~/MakeM.sh"'
 alias s='source ~/.zshrc'
 alias logssh='eval $(ssh-agent); ssh-add'
 #PS1=$BLEU'[\u@\h \W]\$ '$WHITE
-
+bindkey '^R' history-incremental-search-backward
 
 
 autoload -U colors && colors
 
 
 function izitgit () {
-    if [[ -d .git ]] ; then
-        gitb="[$(git rev-parse --abbrev-ref HEAD)]"
-        if [[ $?  -ne 0 ]] || [[ -z "$gitb" ]] ; then
-            return
-        fi
-    else
-        gitb=""
-    fi
+    #if [[ -d .git ]] ; then
+        gitb="[$(git branch 2> /dev/null | grep -E "^*" | colrm 1 2)]"
+        #if [[ $?  -ne 0 ]] || [[ -z "$gitb" ]] ; then
+         #   return
+        #fi
+    #else
+   #     gitb=""
+    #fi
     print $gitb
 }
 
