@@ -1,5 +1,5 @@
 export LANG=en_US.utf8
-export SHELL=zsh
+export LOC="/home/w4pity"
 export NNTPSERVER="news.epita.fr"
 export EDITOR=vim
 LS_COLORS=$LS_COLORS:'di=1;36:' ; export LS_COLORS
@@ -10,6 +10,11 @@ alias clone_github='~/afs/clone_github.sh'
 alias i3lockR='~/afs/lockR.sh'
 alias rms='~/scripts/scripts/remove.sh'
 alias rename="i3-msg 'rename workspace to"
+alias musique="chromium http://www.deezer.com/fr/ & pavucontrol &"
+alias titite="firefox -new-window https://discordapp.com/channels/@me/ & 
+firefox -new-window https://web.skype.com/fr/ &"
+alias mail="thunderbird &"
+alias code="~/scripts/scripts/lunchWork.sh"
 alias ks='ls'
 alias make='t && make'
 alias t='echo -e "\033[33;7m...............NEXT.................\033[0m"'
@@ -21,14 +26,14 @@ alias s='source ~/.zshrc'
 alias logssh='eval $(ssh-agent); ssh-add'
 #PS1=$BLEU'[\u@\h \W]\$ '$WHITE
 bindkey '^R' history-incremental-search-backward
-
+cd $LOC
 
 autoload -U colors && colors
 
 
 function izitgit () {
     #if [[ -d .git ]] ; then
-        gitb="[$(git branch 2> /dev/null | grep -E "^*" | colrm 1 2)]"
+        gitb="[$(git branch 2> /dev/null | grep "^*" | colrm 1 2)]"
         #if [[ $?  -ne 0 ]] || [[ -z "$gitb" ]] ; then
          #   return
         #fi
@@ -50,6 +55,7 @@ PROMPT="[%(?.$fg[green].$fg[red])% "
 PROMPT+="%?$reset_color]$fg[cyan]$(folder)$reset_color"
 PROMPT+="$fg[yellow]$(izitgit)$reset_color
 > "
+LOC=$(pwd)
 }
 RPROMPT="%T"
 
